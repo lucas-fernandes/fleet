@@ -21,8 +21,8 @@
         <section class="container-fluid" id="login">
             <div class="row bem-vindo">
                 <div class="col-md-5 " style="background-color: #4682B4;">
-                    <div class="text-center"><img src="../images/img_login.png"style="width: 200px; margin-top: 30px; height: auto;"></div>
-                    <p class="titulo1 text-center">Bem-vindo de volta!</p>
+                    <div class="text-center"><img src="../assets/img-login.jpg"style="width: 500px; margin-top: 30px; height: auto; border-radius: 50px;"></div>
+                    <p class="titulo1 text-center">Seja bem-vindo!</p>
                     <p class="texto1 text-center"> Clique no botão abaixo para fazer log in </p>
                     <p class="text-center"><button onclick="window.location.href='views/login'"  type="button" class="btn" style="margin-bottom: 50px; border-radius: 10pt; border: solid white 2px; color: white; ">LOG IN</button></p>
                 </div>
@@ -35,22 +35,24 @@
                         <div class="form-group">                           
                             <input type="text" class="form-control" autocomplete="off" placeholder= "Sobrenome" name="sobrenome">
                         </div>
-                        <div class="form-group">                           
+                        <div class="form-group">
+                            Data de nascimento:                           
                             <input type="date" class="form-control" autocomplete="off" placeholder= "Nascimento" name="nascimento">
-                        </div>
-                        <div class="form-group">                           
-                            <input type="tel" class="form-control" autocomplete="off" placeholder= "Telefone" name="telefone">
                         </div>
                         <div class="form-group">
                             <input type="email" class="form-control" autocomplete="off" placeholder="E-mail" name="email">
                         </div>
 
                         <div class="form-group">                           
-                            <input type="text" class="form-control" autocomplete="off" placeholder= "Carro" name="carro">
+                            <input type="tel" class="form-control" autocomplete="off" placeholder= "Telefone" name="telefone">
+                        </div>                      
+
+                        <div class="form-group">                           
+                            <input type="text" class="form-control" autocomplete="off" placeholder= "Carro" name="cars">
                         </div>
                         
                         <div class="form-group">                           
-                            <input type="text" class="form-control" autocomplete="off" placeholder= "Login" name="login">
+                            <input type="text" class="form-control" autocomplete="off" placeholder= "Login" name="user">
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" autocomplete="off" placeholder="Senha" name="pwd">
@@ -61,7 +63,7 @@
                         <% if (message.length > 0) { %>
                             <div class="text-center">
                                 <% if (message == "ok") { %>
-                                    <label style="color: green;">Usuário cadastrado!</label>
+                                    <label style="color: green;">Usuário cadastrado com sucesso!</label>
 
                                 <% }else{ %>
                                     <label style="color: red;"><%= message %></label>
@@ -78,7 +80,7 @@
         <footer class="container-fluid" style="background-color: #4682B4; ">
             <div class="row">
                 <div class="col-12">
-                    <div class="text-center" style="font-size: 15px;font-family:Arial, Helvetica, sans-serif; font-weight:  bold; color: white;margin-bottom: 10px;margin-top: 5px;">© 2020 Otávio Augusto Souza Silva.</div>
+                    <div class="text-center" style="font-size: 15px;font-family:Arial, Helvetica, sans-serif; font-weight:  bold; color: black;margin-bottom: 10px;margin-top: 5px;">© 2022 Lucas Fernandes.</div>
                     
                 </div>
             </div>
