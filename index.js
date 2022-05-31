@@ -24,7 +24,7 @@ function conectiondb(){
     var con = mysql.createConnection({
         host: 'localhost', // O host do banco. Ex: localhost
         user: 'root', // Um usuário do banco. Ex: user 
-        password: 'ro0tdb', // A senha do usuário. Ex: user123
+        password: 'sqlro0t', // A senha do usuário. Ex: user123
         database: 'dblogin' // A base de dados a qual a aplicação irá se conectar, deve ser a mesma onde foi executado o Código 1. Ex: node_mysql
     });
 
@@ -139,7 +139,7 @@ app.post('/log', function (req, res) {
   })
 })
 
-// cmétodo post da home
+// método post da home
 app.post('/update', function (req, res) {
   console.log('entrou')
 
@@ -158,28 +158,14 @@ app.post('/update', function (req, res) {
     'UPDATE users SET nome = ?, sobrenome = ?, nascimento = ?, email = ?, telefone = ?, cars = ?, user = ?, pass = ? WHERE user LIKE ?'
 
   //execução da query
-  con.query(
-    query,
-    [
-      nome,
-      sobrenome,
-      nascimento,
-      email,
-      telefone,
-      cars,
-      user,
-      pass,
-      req.session.user
-    ],
-    
-    function (err, results) {
-      var query2 = 'SELECT * FROM users WHERE user LIKE ?'
-      con.query(query2, [req.session.user], function (err, results) {
-        res.render('views/home', { message: results })
-      })
-    }
-  )
-})
+  con.query(query,[nome, sobrenome, nascimento, email, telefone, cars, user, pass, req.session.user], function (err, results){
+      
+    var query2 = 'SELECT * FROM users WHERE user LIKE ?'
+    con.query(query2, [req.session.user], function (err, results) {
+      res.render('views/home', { message: results })
+    });
+  });
+});
 
 app.post('/delete', function (req, res) {
   //pega os valores digitados pelo usuário

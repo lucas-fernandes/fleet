@@ -6,7 +6,7 @@ CREATE TABLE users(
 	id INTEGER PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR (100) NOT NULL,
     sobrenome VARCHAR (100) NOT NULL,
-    nascimento INTEGER NOT NULL,
+    nascimento DATE NOT NULL,
     email VARCHAR (100) NOT NULL,
     telefone INTEGER NOT NULL,
     cars_id VARCHAR(100) NOT NULL,
